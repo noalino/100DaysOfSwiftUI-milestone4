@@ -12,11 +12,32 @@ struct ContentView: View {
 
     var body: some View {
         List(users) { user in
-            HStack {
+            Label {
                 Text(user.name)
-                Spacer()
-                Text(user.isActive ? "Online" : "Offline")
+            } icon: {
+                Image(systemName: "circle.fill")
+                    .font(.caption)
+                    .foregroundColor(user.isActive ? .green : .gray)
             }
+        }
+        .task {
+            await loadUsers()
+        }
+    }
+
+    func loadUsers() async {
+        let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")!
+
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+
+            if let decodedUsers = try? decoder.decode([User].self, from: data) {
+                users = decodedUsers
+            }
+        } catch {
+            print("Invalid data")
         }
     }
 }
