@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var users = [User]()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List(users) { user in
+            HStack {
+                Text(user.name)
+                Spacer()
+                Text(user.isActive ? "Online" : "Offline")
+            }
         }
-        .padding()
     }
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User {
+struct User: Identifiable {
     var id: UUID
     var isActive: Bool
     var name: String
