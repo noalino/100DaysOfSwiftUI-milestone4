@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		50ADA5AC2B1F2B9F00A969A5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ADA5AB2B1F2B9F00A969A5 /* User.swift */; };
 		50ADA5AE2B1F2C2000A969A5 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ADA5AD2B1F2C2000A969A5 /* Friend.swift */; };
+		50ADA5B02B1F374D00A969A5 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ADA5AF2B1F374D00A969A5 /* UserDetailView.swift */; };
 		50CACE862B1C7FED009722EE /* FriendFaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CACE852B1C7FED009722EE /* FriendFaceApp.swift */; };
 		50CACE882B1C7FED009722EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CACE872B1C7FED009722EE /* ContentView.swift */; };
 		50CACE8A2B1C7FEE009722EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CACE892B1C7FEE009722EE /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		50ADA5AB2B1F2B9F00A969A5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		50ADA5AD2B1F2C2000A969A5 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		50ADA5AF2B1F374D00A969A5 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		50CACE822B1C7FED009722EE /* FriendFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CACE852B1C7FED009722EE /* FriendFaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFaceApp.swift; sourceTree = "<group>"; };
 		50CACE872B1C7FED009722EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				50CACE852B1C7FED009722EE /* FriendFaceApp.swift */,
 				50CACE872B1C7FED009722EE /* ContentView.swift */,
+				50ADA5AF2B1F374D00A969A5 /* UserDetailView.swift */,
 				50ADA5AB2B1F2B9F00A969A5 /* User.swift */,
 				50ADA5AD2B1F2C2000A969A5 /* Friend.swift */,
 				50CACE892B1C7FEE009722EE /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 				50CACE882B1C7FED009722EE /* ContentView.swift in Sources */,
 				50CACE862B1C7FED009722EE /* FriendFaceApp.swift in Sources */,
 				50ADA5AC2B1F2B9F00A969A5 /* User.swift in Sources */,
+				50ADA5B02B1F374D00A969A5 /* UserDetailView.swift in Sources */,
 				50ADA5AE2B1F2C2000A969A5 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

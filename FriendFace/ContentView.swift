@@ -11,17 +11,21 @@ struct ContentView: View {
     @State private var users = [User]()
 
     var body: some View {
-        List(users) { user in
-            Label {
-                Text(user.name)
-            } icon: {
-                Image(systemName: "circle.fill")
-                    .font(.caption)
-                    .foregroundColor(user.isActive ? .green : .gray)
+        NavigationStack {
+            List(users) { user in
+                Label {
+                    NavigationLink(user.name, destination: UserDetailView(user: user))
+                } icon: {
+                    Image(systemName: "circle.fill")
+                        .font(.caption)
+                        .foregroundColor(user.isActive ? .green : .gray)
+                }
             }
-        }
-        .task {
-            await loadUsers()
+            .task {
+                await loadUsers()
+            }
+            .navigationTitle("FriendFace")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 
