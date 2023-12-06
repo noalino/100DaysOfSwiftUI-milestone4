@@ -22,7 +22,9 @@ struct ContentView: View {
                 }
             }
             .task {
-                await loadUsers()
+                if users.count == 0 {
+                    await loadUsers()
+                }
             }
             .navigationTitle("FriendFace")
             .navigationBarTitleDisplayMode(.inline)
