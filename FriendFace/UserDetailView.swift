@@ -5,6 +5,7 @@
 //  Created by Noalino on 05/12/2023.
 //
 
+import SwiftData
 import SwiftUI
 
 struct TrailingIconLabelStyle: LabelStyle {
@@ -90,8 +91,8 @@ struct UserDetailView: View {
     }
 }
 
-#Preview {
-    let friend = Friend(id: UUID(), name: "Toto")
-    let user = User(id: UUID(), isActive: true, name: "Taylor Swift", age: 31, company: "My Little Company", email: "taylor.swift@apple.com", address: "Alley Road", about: "Lorem Ipsum", registered: .now, tags: ["pop", "country", "rock"], friends: [friend, friend])
-    return UserDetailView(user: user)
-}
+//#Preview {
+//    let friend = Friend(id: UUID(), name: "Toto")
+//    let user = User(id: UUID(), isActive: true, name: "Taylor Swift", age: 31, company: "My Little Company", email: "taylor.swift@apple.com", address: "Alley Road", about: "Lorem Ipsum", registered: .now, tags: ["pop", "country", "rock"], friends: [friend, friend])
+//    return UserDetailView(user: user)
+//}

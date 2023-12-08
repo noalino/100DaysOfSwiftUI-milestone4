@@ -5,10 +5,12 @@
 //  Created by Noalino on 03/12/2023.
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    @State private var users = [User]()
+    @Environment(\.modelContext) var modelContext
+    @Query var users: [User]
 
     var body: some View {
         NavigationStack {
@@ -40,14 +42,17 @@ struct ContentView: View {
             decoder.dateDecodingStrategy = .iso8601
 
             if let decodedUsers = try? decoder.decode([User].self, from: data) {
-                users = decodedUsers
+                for decodedUser in decodedUsers {
+                    modelContext.insert(decodedUser)
+                }
             }
         } catch {
-            print("Invalid data")
+            print("Invalid data: \(error.localizedDescription)")
         }
     }
 }
 
 #Preview {
     ContentView()
+        .modelContainer(for: User.self)
 }
