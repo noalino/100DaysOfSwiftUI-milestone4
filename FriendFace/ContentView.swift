@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     @Query var users: [User]
+    @State private var isLoadingData = false
 
     var body: some View {
         NavigationStack {
@@ -30,10 +31,13 @@ struct ContentView: View {
             }
             .navigationTitle("FriendFace")
             .navigationBarTitleDisplayMode(.inline)
+            .opacity(isLoadingData ? 0 : 1)
         }
     }
 
     func loadUsers() async {
+        isLoadingData = true
+
         let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")!
 
         do {
@@ -49,6 +53,8 @@ struct ContentView: View {
         } catch {
             print("Invalid data: \(error.localizedDescription)")
         }
+
+        isLoadingData = false
     }
 }
 
