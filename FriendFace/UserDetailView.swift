@@ -91,8 +91,21 @@ struct UserDetailView: View {
     }
 }
 
-//#Preview {
-//    let friend = Friend(id: UUID(), name: "Toto")
-//    let user = User(id: UUID(), isActive: true, name: "Taylor Swift", age: 31, company: "My Little Company", email: "taylor.swift@apple.com", address: "Alley Road", about: "Lorem Ipsum", registered: .now, tags: ["pop", "country", "rock"], friends: [friend, friend])
-//    return UserDetailView(user: user)
-//}
+#Preview {
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: User.self, configurations: config)
+        let context = container.mainContext
+
+        let user = User(isActive: true, name: "Taylor Swift", age: 31, company: "My Little Company", email: "taylor.swift@apple.com", address: "Alley Road", about: "Lorem Ipsum", registered: .now, tags: ["pop", "country", "rock"], friends: [Friend(name: "Maxime"), Friend(name: "Grim")])
+
+        context.insert(user)
+
+        try context.save()
+
+        return UserDetailView(user: user)
+            .modelContainer(container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
+}

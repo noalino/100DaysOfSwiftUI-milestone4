@@ -36,7 +36,7 @@ class User: Codable, Identifiable {
     var tags: [String]
     @Relationship var friends: [Friend]
 
-    init(id: UUID, isActive: Bool, name: String, age: Int, company: String, email: String, address: String, about: String, registered: Date, tags: [String], friends: [Friend]) {
+    init(id: UUID = UUID(), isActive: Bool, name: String, age: Int, company: String, email: String, address: String, about: String, registered: Date, tags: [String], friends: [Friend]) {
         self.id = id
         self.isActive = isActive
         self.name = name
